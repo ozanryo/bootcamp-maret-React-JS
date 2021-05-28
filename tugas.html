@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Day 37</title>
+    <style>
+        .row-input {
+            margin-bottom: 10px;
+            display: flex;
+        }
+
+        span.label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        .row-button {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .row-button > input:first-child {
+            margin-right: 10px;
+        }
+
+        .container {
+            border: 1px solid rgba(0, 0, 0, .11);
+            padding: 10px;
+            width: 500px
+        }
+
+        .controls-item {
+            display: inline-block;
+        }
+
+        .btn {
+            margin: 1px;
+        }
+    </style>
+    <link rel="stylesheet" href="tugas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
+    
+
+    <script src="tugas.js" defer></script>
+
+  </head>
+
+  <body>
+    
+    <h1>Registrasi User</h1>
+    <!-- Pembuatan Form Registrasi-->
+    <form name="userInput" onsubmit="event.preventDefault(); onSaveForm()">
+
+      <!-- Nama -->
+      <div class="row-input">
+        <span class="label">Name</span>
+        <input type="text" name="name" />
+        <input type="hidden" name="idx" />
+      </div>
+
+      <!-- Email -->
+      <div class="row-input">
+        <span class="label">Email</span>
+        <input type="text" name="email" />
+      </div>
+
+      <!-- Username -->
+      <div class="row-input">
+        <span class="label">Username</span>
+        <input type="text" name="username" />
+      </div>
+
+      <!-- Website -->
+      <div class="row-input">
+        <span class="label">Website</span>
+        <input type="text" name="website" />
+      </div>
+
+      <!-- Button -->
+      <div class="row-button">
+        <input type="submit" value="Save" />
+        <input type="reset" value="Reset" />
+      </div>
+    </form>
+
+    <hr />
+
+    <h2>Search User</h2>
+
+    <!-- Search Data Form -->
+    <form name="searchByName" onsubmit="event.preventDefault(); searchNameForm()">
+
+        <!--Search By Name -->
+        <div class="row-input">
+            <span class="label">Search By Name : </span>
+            <input type="text" name="searchname" />
+            <input type="submit" value="Search" />
+        </div>
+
+    </form>    
+
+    <!--Search By Username -->
+    <form name="searchByUsername" onsubmit="event.preventDefault(); searchUsernameForm()">
+        <div class="row-input">
+            <span class="label">Search By Username : </span>
+            <input type="text" name="searchusername" />
+            <input type="submit" value="Search" />
+        </div>
+    </form>
+    
+    
+    <!-- Table Data Result -->
+    <table class="userList" width="900px" border="1">
+      <thead>
+        <tr>
+          <th width="40px">Id</th>
+          <th width="200px">Name</th>
+          <th width="100px">Email</th>
+          <th width="150px">Username</th>
+          <th width="150px">Website</th>
+          <th width="250px">Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="pagination">
+        <ul> <!--pages or li are comes from javascript --> </ul>
+    </div>
+
+    <hr />
+    <!-- Search Photos -->
+
+    <h2>Search Album</h2>
+
+    <!-- Form Search Album -->
+    <form name="searchAlbumById" onsubmit="event.preventDefault(); searchAlbumForm()">
+      <div class="row-input">
+        <span class="label">Search Album By Name : </span>
+        <select name="searchalbum"></select>
+        <input type="submit" value="Search" />
+      </div>
+    </form>
+
+    <!-- Table -->
+    <table class="photoList" width="550px" border="0">
+      <!--<thead>-->
+        <!--<tr>-->
+          <!--<th width="100px">Photo Id</th>-->
+          <!--<th width="450px">Photo</th>-->
+          <!--<th width="250px">Action</th>-->
+        <!--</tr>-->
+      <!--</thead>-->
+      <tbody></tbody>
+    </table>
+
+    <div class="pagination-album">
+        <ul></ul>
+    </div>
+
+  </body>
+</html>
