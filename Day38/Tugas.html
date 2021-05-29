@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tugas Day 37</title>
+        <style>
+            .row-input {
+                margin-bottom: 10px;
+                display: flex;
+            }
+    
+            span.label {
+                display: inline-block;
+                width: 100px;
+            }
+    
+            .row-button {
+                width: 300px;
+                display: flex;
+                justify-content: center;
+            }
+    
+            .row-button > input:first-child {
+                margin-right: 10px;
+            }
+    
+            .container {
+                border: 1px solid rgba(0, 0, 0, .11);
+                padding: 10px;
+                width: 500px
+            }
+    
+            .controls-item {
+                display: inline-block;
+            }
+    
+            .btn {
+                margin: 1px;
+            }
+            
+            .pagination {
+                display: flex;
+                justify-content: center;
+            }
+
+            .pagination ul {
+                display: flex;
+            }
+
+            .pagination ul li {
+                list-style-type: none;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+
+            .pagination span {
+                border: 1px solid grey;
+                margin: 10px 5px 0 0;
+                padding: 5px 20px;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            .pagination span:last-child {
+                margin-right: 0;
+            }
+
+            .pagination span.active {
+                background-color: grey;
+                cursor: auto;
+            }
+
+            .pagination span.disabled {
+                background-color: lightgray;
+                cursor: auto;
+            }
+
+        </style>
+        <script src="Tugas.js" defer></script>
+        
+        <!--<link rel="stylesheet" href="Tugas.css">-->
+    </head>
+
+    <body>
+        <h1>Table User</h1>
+
+        <!-- Form Search Album -->
+        <form name="searchAlbumById" onsubmit="event.preventDefault(); searchAlbumForm()">
+            <div class="row-input">
+                <span class="label">Search Album By Name : </span>
+                <select name="searchid"></select>
+                <input type="submit" value="Search" />
+            </div>
+        </form>
+
+        <!-- Table User -->
+        <table class="photoList" border="1" width="100%">
+            <thead>
+                <td width="100px"> Nama </td>
+                <td width="100px"> Album ID </td>
+                <td width="100px"> Judul </td>
+                <td width="100px"> Thumbnail </td>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <ul></ul>
+        </div>
+
+    </body>
+</html>
